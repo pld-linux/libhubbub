@@ -10,7 +10,6 @@ License:	MIT
 Group:		Libraries
 Source0:	http://download.netsurf-browser.org/libs/releases/%{name}-%{version}-src.tar.gz
 # Source0-md5:	9baf3f765e25336ab1b64da8968270f7
-#Patch0:		lib.patch
 URL:		http://www.netsurf-browser.org/projects/libhubbub/
 BuildRequires:	libparserutils-devel >= 0.2.0
 BuildRequires:	netsurf-buildsystem >= 1.1
@@ -66,7 +65,6 @@ Statyczna biblioteka libhubbub.
 
 %prep
 %setup -q
-#%%patch0 -p1
 
 %build
 export CC="%{__cc}"
