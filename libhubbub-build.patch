@@ -1,15 +1,16 @@
---- libhubbub-0.3.0/Makefile~	2014-04-18 11:49:06.000000000 +0200
-+++ libhubbub-0.3.0/Makefile	2014-10-09 08:56:59.008078863 +0200
-@@ -15,12 +15,6 @@
+--- libhubbub-0.3.1/Makefile.orig	2015-03-16 12:04:59.380838569 +0100
++++ libhubbub-0.3.1/Makefile	2015-03-16 12:05:36.949410158 +0100
+@@ -15,12 +15,7 @@ TESTRUNNER := $(PERL) $(NSTESTTOOLS)/tes
  WARNFLAGS := -Wall -W -Wundef -Wpointer-arith -Wcast-align \
  	-Wwrite-strings -Wstrict-prototypes -Wmissing-prototypes \
  	-Wmissing-declarations -Wnested-externs -pedantic
 -# BeOS/Haiku/AmigaOS have standard library errors that issue warnings.
--ifneq ($(TARGET),beos)
--  ifneq ($(TARGET),amiga)
+-ifneq ($(BUILD),i586-pc-haiku)
+-  ifneq ($(findstring amigaos,$(BUILD)),amigaos)
 -    WARNFLAGS := $(WARNFLAGS) -Werror
 -  endif
 -endif
++
  CFLAGS := -D_BSD_SOURCE -I$(CURDIR)/include/ \
  	-I$(CURDIR)/src $(WARNFLAGS) $(CFLAGS)
  ifneq ($(GCCVER),2)
