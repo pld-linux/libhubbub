@@ -67,7 +67,7 @@ Summary:	libhubbub library headers
 Summary(pl.UTF-8):	Pliki nagłówkowe biblioteki libhubbub
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
-Requires:	libparserutils-devel >= 0.2.0
+Requires:	libparserutils-devel >= 0.2.1
 
 %description devel
 This package contains the include files and other resources you can
