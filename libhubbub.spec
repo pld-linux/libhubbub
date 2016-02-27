@@ -5,17 +5,17 @@
 Summary:	HTML5 compliant parsing library
 Summary(pl.UTF-8):	Biblioteka analizująca HTML5
 Name:		libhubbub
-Version:	0.3.1
+Version:	0.3.3
 Release:	1
 License:	MIT
 Group:		Libraries
 Source0:	http://download.netsurf-browser.org/libs/releases/%{name}-%{version}-src.tar.gz
-# Source0-md5:	bb32083b2c036dab25278968014be746
+# Source0-md5:	037e642d3e5e6086756f57b5316b2c4f
 Patch0:		%{name}-build.patch
 URL:		http://www.netsurf-browser.org/projects/libhubbub/
-BuildRequires:	libparserutils-devel >= 0.2.1
-BuildRequires:	netsurf-buildsystem >= 1.3
-Requires:	libparserutils >= 0.2.1
+BuildRequires:	libparserutils-devel >= 0.2.3
+BuildRequires:	netsurf-buildsystem >= 1.5
+Requires:	libparserutils >= 0.2.3
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -91,9 +91,9 @@ Statyczna biblioteka libhubbub.
 
 %prep
 %setup -q
-%patch0 -p1
 
 %build
+export AR="%{__ar}"
 export CC="%{__cc}"
 export CFLAGS="%{rpmcflags} %{rpmcppflags}"
 export LDFLAGS="%{rpmldflags}"
@@ -113,6 +113,11 @@ export LDFLAGS="%{rpmldflags}"
 %endif
 
 %install
+export AR="%{__ar}"
+export CC="%{__cc}"
+export CFLAGS="%{rpmcflags} %{rpmcppflags}"
+export LDFLAGS="%{rpmldflags}"
+
 rm -rf $RPM_BUILD_ROOT
 %{__make} install \
 	Q= \
