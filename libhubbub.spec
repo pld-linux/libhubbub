@@ -11,7 +11,6 @@ License:	MIT
 Group:		Libraries
 Source0:	http://download.netsurf-browser.org/libs/releases/%{name}-%{version}-src.tar.gz
 # Source0-md5:	037e642d3e5e6086756f57b5316b2c4f
-Patch0:		%{name}-build.patch
 URL:		http://www.netsurf-browser.org/projects/libhubbub/
 BuildRequires:	libparserutils-devel >= 0.2.3
 BuildRequires:	netsurf-buildsystem >= 1.5
@@ -113,12 +112,13 @@ export LDFLAGS="%{rpmldflags}"
 %endif
 
 %install
+rm -rf $RPM_BUILD_ROOT
+
 export AR="%{__ar}"
 export CC="%{__cc}"
 export CFLAGS="%{rpmcflags} %{rpmcppflags}"
 export LDFLAGS="%{rpmldflags}"
 
-rm -rf $RPM_BUILD_ROOT
 %{__make} install \
 	Q= \
 	PREFIX=%{_prefix} \
