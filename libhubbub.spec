@@ -5,15 +5,15 @@
 Summary:	HTML5 compliant parsing library
 Summary(pl.UTF-8):	Biblioteka analizująca HTML5
 Name:		libhubbub
-Version:	0.3.3
+Version:	0.3.4
 Release:	1
 License:	MIT
 Group:		Libraries
 Source0:	http://download.netsurf-browser.org/libs/releases/%{name}-%{version}-src.tar.gz
-# Source0-md5:	037e642d3e5e6086756f57b5316b2c4f
+# Source0-md5:	89e72cf7baa5ff86c0cc78731f29aaa7
 URL:		http://www.netsurf-browser.org/projects/libhubbub/
 BuildRequires:	libparserutils-devel >= 0.2.3
-BuildRequires:	netsurf-buildsystem >= 1.5
+BuildRequires:	netsurf-buildsystem >= 1.6
 Requires:	libparserutils >= 0.2.3
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
