@@ -12,8 +12,10 @@ Group:		Libraries
 Source0:	http://download.netsurf-browser.org/libs/releases/%{name}-%{version}-src.tar.gz
 # Source0-md5:	8c45933be18024f871371dab084d8fe2
 URL:		http://www.netsurf-browser.org/projects/libhubbub/
+BuildRequires:	gperf
 BuildRequires:	libparserutils-devel >= 0.2.5
 BuildRequires:	netsurf-buildsystem >= 1.10
+BuildRequires:	perl-base
 Requires:	libparserutils >= 0.2.5
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
